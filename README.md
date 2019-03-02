@@ -11,7 +11,7 @@
 [Greasemonkey](https://www.greasespot.net/) - 파이어폭스  
 [Tampermonkey](https://tampermonkey.net/) - 크롬, 엣지, 사파리, 파이어폭스, 오페라, 돌핀, UC  
 [Violentmonkey](https://violentmonkey.github.io/) - 크롬, 파이어폭스, Maxthon
-2. [여기](https://raw.githubusercontent.com/joyfuI/search-link-fix/master/search-link-fix.user.js)에서 유저 스크립트를 설치합니다.
+2. *[여기](https://raw.githubusercontent.com/joyfuI/search-link-fix/master/search-link-fix.user.js)*에서 유저 스크립트를 설치합니다.
 3. ????
 4. PROFIT!
 ## 주의사항
