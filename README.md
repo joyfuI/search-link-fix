@@ -7,7 +7,7 @@
 이 스크립트는 이런 행위를 차단합니다.  
 ![적용전후](https://i.imgur.com/SLBMety.png)
 ## 설치
-1. 브라우저에 맞게 유저스크립트 확장기능 중 하나를 설치합니다.
+1. 브라우저에 맞게 유저스크립트 확장기능 중 하나를 설치합니다.  
 [Greasemonkey](https://www.greasespot.net/) - 파이어폭스  
 [Tampermonkey](https://tampermonkey.net/) - 크롬, 엣지, 사파리, 파이어폭스, 오페라, 돌핀, UC  
 [Violentmonkey](https://violentmonkey.github.io/) - 크롬, 파이어폭스, Maxthon
