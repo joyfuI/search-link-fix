@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Search Link Fix
 // @namespace	https://joyfui.wo.tc/
-// @version		4
+// @version		5
 // @author		joyfuI
 // @description	네이버, 구글, 다음 등 검색엔진의 사용자 추적을 위한 링크를 수정합니다.
 // @homepage	https://github.com/joyfuI/search-link-fix
@@ -12,6 +12,7 @@
 // @include		https://search.daum.net/search*
 // @include		http://search.zum.com/search.zum*
 // @include		https://search.daum.net/nate*
+// @include		http://search.dreamwiz.com/*
 // @run-at		document-end
 // @grant		none
 // ==/UserScript==
@@ -71,5 +72,14 @@
 				}
 			}, 100);
 		}
+	}
+	else if (location.host.indexOf('dreamwiz') > -1)	// 드림위즈
+	{
+		var nodes = document.getElementsByClassName('midbox_wrap')[0].getElementsByTagName('a');
+		for (var i of nodes)
+			i.removeAttribute('onclick');
+		var tag = document.createElement('script');
+		tag.textContent = 'window.publog_send = function () {};';
+		document.head.appendChild(tag);
 	}
 })();

@@ -20,6 +20,7 @@
 * [Daum](https://www.daum.net/)
 * [ZUM](http://zum.com/)
 * [네이트](https://www.nate.com/)
+* [드림위즈](http://www.dreamwiz.com/)
 ## 주의사항
 검색 페이지에 있는 모든 ```<a>``` 태그의 click 이벤트를 무력화 시키는 방식입니다.  
 이로인해 링크를 클릭해도 아무런 반응이 없는 문제가 생길 수 있으므로 문제발견 시 적극적으로 알려주세요.
