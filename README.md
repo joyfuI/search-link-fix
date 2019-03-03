@@ -1,5 +1,5 @@
 # search-link-fix
-네이버, 구글, 다음 검색엔진에서 사용자 추적을 위해 링크를 변형하는 것을 차단하는 유저 스크립트입니다.
+네이버, 구글, 다음 등 검색엔진에서 사용자 추적을 위해 링크를 변형하는 것을 차단하는 유저 스크립트입니다.
 ## 소개
 ![네이버](https://i.imgur.com/fQpEsUG.gif)
 ![구글](https://i.imgur.com/Sh6ze0Y.gif)  
@@ -14,6 +14,11 @@
 2. [**여기**](https://raw.githubusercontent.com/joyfuI/search-link-fix/master/search-link-fix.user.js)에서 유저 스크립트를 설치합니다.
 3. ????
 4. PROFIT!
+## 적용 사이트
+* [Google](https://www.google.co.kr/)
+* [NAVER](https://www.naver.com/)
+* [Daum](https://www.daum.net/)
+* [zum](http://zum.com/)
 ## 주의사항
 검색 페이지에 있는 모든 ```<a>``` 태그의 click 이벤트를 무력화 시키는 방식입니다.  
 이로인해 링크를 클릭해도 아무런 반응이 없는 문제가 생길 수 있으므로 문제발견 시 적극적으로 알려주세요.
