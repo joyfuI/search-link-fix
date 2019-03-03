@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Search Link Fix
 // @namespace	https://joyfui.wo.tc/
-// @version		3
+// @version		4
 // @author		joyfuI
 // @description	네이버, 구글, 다음 등 검색엔진의 사용자 추적을 위한 링크를 수정합니다.
 // @homepage	https://github.com/joyfuI/search-link-fix
@@ -11,6 +11,7 @@
 // @include		https://search.naver.com/search.naver*
 // @include		https://search.daum.net/search*
 // @include		http://search.zum.com/search.zum*
+// @include		https://search.daum.net/nate*
 // @run-at		document-end
 // @grant		none
 // ==/UserScript==
@@ -38,7 +39,7 @@
 		tag.textContent = 'window.goOtherCR = window.goOtherTCR = function () {};';
 		document.head.appendChild(tag);
 	}
-	else if (location.host.indexOf('daum') > -1)	// 다음
+	else if (location.host.indexOf('daum') > -1)	// 다음, 네이트
 	{
 		var nodes = document.getElementById('cMain').getElementsByTagName('a');
 		for (var i of nodes)
