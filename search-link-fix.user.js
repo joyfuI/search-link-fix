@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Search Link Fix
 // @namespace	https://joyfui.wo.tc/
-// @version		5
+// @version		6
 // @author		joyfuI
 // @description	네이버, 구글, 다음 등 검색엔진의 사용자 추적을 위한 링크를 수정합니다.
 // @homepage	https://github.com/joyfuI/search-link-fix
@@ -14,7 +14,7 @@
 // @include		https://search.daum.net/nate*
 // @include		http://search.dreamwiz.com/*
 // @run-at		document-end
-// @grant		none
+// @grant		unsafeWindow
 // ==/UserScript==
 
 (function() {
