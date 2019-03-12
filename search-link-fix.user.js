@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Search Link Fix
 // @namespace	https://joyfui.wo.tc/
-// @version		6
+// @version		7
 // @author		joyfuI
 // @description	네이버, 구글, 다음 등 검색엔진의 사용자 추적을 위한 링크를 수정합니다.
 // @homepage	https://github.com/joyfuI/search-link-fix
@@ -35,7 +35,8 @@
 	{
 		var nodes = document.getElementById('container').getElementsByTagName('a');
 		for (var i of nodes)
-			i.removeAttribute('onclick');
+			if (i.href.charAt(i.href.length - 1) != '#')	// # 링크 제외
+				i.removeAttribute('onclick');
 		var tag = document.createElement('script');
 		tag.textContent = 'window.goOtherCR = window.goOtherTCR = function () {};';
 		document.head.appendChild(tag);
