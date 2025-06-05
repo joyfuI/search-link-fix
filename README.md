@@ -27,6 +27,7 @@
 - [Daum](https://www.daum.net/)
 - [네이트](https://www.nate.com/)
 - [ZUM](http://zum.com/)
+- [Bing](https://www.bing.com/)
 
 ## 주의사항
 

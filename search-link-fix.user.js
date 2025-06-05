@@ -16,6 +16,7 @@
 // @include      https://m.search.daum.net/nate*
 // @include      https://search.zum.com/search.zum*
 // @include      https://m.search.zum.com/search.zum*
+// @include      https://www.bing.com/search*
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -39,7 +40,7 @@
   }
 
   // 구글 맞춤 검색처럼 동적으로 추가된 링크도 처리하기 위해 MutationObserver 사용
-  const setupObserver = (container, selector = 'a') => {
+  const setupObserver = (container, selector = 'a', callback = processLinks) => {
     if (!container) {
       return;
     }
@@ -47,8 +48,8 @@
       for (let mutation of mutations) {
         if (mutation.addedNodes.length) {
           for (let node of mutation.addedNodes) {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              processLinks(node, selector);
+            if (node.nodeType === Node.ELEMENT_NODE && callback) {
+              callback(node, selector);
             }
           }
         }
@@ -59,6 +60,12 @@
       subtree: true
     });
     return observer;
+  }
+
+  const injectScript = (scriptText) => {
+    const script = document.createElement('script');
+    script.textContent = scriptText;
+    document.head.appendChild(script);
   }
 
   // 구글
@@ -75,9 +82,7 @@
     const selector = 'a:not([href="#"])';
     processLinks(container, selector);
     setupObserver(container, selector);
-    const script = document.createElement('script');
-    script.textContent = 'window.goOtherCR = function () {};';
-    document.head.appendChild(script);
+    injectScript('window.goOtherCR = function () {};');
   }
 
   // 다음, 네이트
@@ -86,9 +91,7 @@
     const selector = 'a:not([href="javascript:"])';
     processLinks(container, selector);
     setupObserver(container, selector);
-    const script = document.createElement('script');
-    script.textContent = 'window.smartLog = function () {};';
-    document.head.appendChild(script);
+    injectScript('window.smartLog = function () {};');
   }
 
   // 줌
@@ -97,5 +100,24 @@
     const selector = 'a';
     processLinks(container, selector);
     setupObserver(container, selector);
+  }
+
+  // 빙
+  else if (domain.includes('bing')) {
+    const container = document.getElementById('b_results');
+    const selector = 'a[href^="https://www.bing.com/ck/a"]';
+    const removeCKA = (node) => {
+      const elements = node.querySelectorAll(selector);
+      for (let element of elements) {
+        const url = new URL(element.href);
+        const u = url.searchParams.get('u') ?? '';
+        const decodeU = atob(u.slice(2));
+        if (decodeU) {
+          element.href = decodeU;
+        }
+      }
+    }
+    removeCKA(container);
+    setupObserver(container, selector, removeCKA);
   }
 })();
