@@ -2,12 +2,16 @@
 
 네이버, 구글, 다음 등 검색엔진에서 사용자 추적을 위해 링크를 변형하는 것을 차단하는 유저 스크립트입니다.
 
+관련 잡담은 [https://blog.joyfui.com/1141](https://blog.joyfui.com/1141)
+
 ## 소개
 
 ![네이버](https://i.imgur.com/fQpEsUG.gif)
-![구글](https://i.imgur.com/Sh6ze0Y.gif)\
+![구글](https://i.imgur.com/Sh6ze0Y.gif)
+
 위 이미지처럼 검색엔진들은 링크를 누르는 순간 추적 링크로 바꾸는 방법을 통해서 사용자가 어떤 링크를 클릭하는지 수집하고 있습니다.\
-이 스크립트는 이런 행위를 차단합니다.\
+이 스크립트는 이런 행위를 차단합니다.
+
 ![적용전후](https://i.imgur.com/SLBMety.png)
 
 ## 설치
